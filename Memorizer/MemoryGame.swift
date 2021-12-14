@@ -6,12 +6,16 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
     
     private(set) var cards: Array<Card>
     
-    private var indexOfTheOnlyCardFaceUp: Int?
+    private var indexOfTheOnlyCardFaceUp: Int? {
+        get { cards.indices.filter { cards[$0].isFaceUP }.oneAndOnly }
+        set { cards.indices.forEach { cards[$0].isFaceUP = ($0 == newValue) }}
+    }
     
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id}),
@@ -24,15 +28,11 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
             }
-            indexOfTheOnlyCardFaceUp = nil
+            cards[chosenIndex].isFaceUP = true
         }
         else {
-            for index in cards.indices {
-                cards[index].isFaceUP = false
-            }
             indexOfTheOnlyCardFaceUp = chosenIndex
         }
-        cards[chosenIndex].isFaceUP.toggle()
     }
     
     func index(of card: Card) -> Int? {
@@ -45,7 +45,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     init(numberOfPairsOfCards: Int, createCardContent: (Int) -> CardContent) {
-        cards = [Card]()
+        cards = []
         for pairIndex in 0..<numberOfPairsOfCards {
             let content: CardContent = createCardContent(pairIndex)
             cards.append(Card(content: content, id: pairIndex*2))
@@ -54,10 +54,26 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     struct Card: Identifiable {
-        var isFaceUP: Bool = false
-        var isMatched: Bool = false
-        var content: CardContent
-        var id: Int
+        var isFaceUP = false
+        var isMatched = false
+        let content: CardContent
+        let id: Int
     }
     
+}
+
+extension Array {
+    var oneAndOnly: Element? {
+        if self.count == 1 {
+            return self.first
+        } else {
+            return nil
+        }
+    }
+}
+
+struct MemoryGame_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
 }
