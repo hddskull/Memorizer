@@ -13,13 +13,13 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     private(set) var cards: Array<Card>
     
     private var indexOfTheOnlyCardFaceUp: Int? {
-        get { cards.indices.filter { cards[$0].isFaceUP }.oneAndOnly }
-        set { cards.indices.forEach { cards[$0].isFaceUP = ($0 == newValue) }}
+        get { cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly }
+        set { cards.indices.forEach { cards[$0].isFaceUp = ($0 == newValue) }}
     }
     
     mutating func choose(_ card: Card) {
         guard let chosenIndex = cards.firstIndex(where: { $0.id == card.id}),
-              !cards[chosenIndex].isFaceUP,
+              !cards[chosenIndex].isFaceUp,
               !cards[chosenIndex].isMatched
         else { return }
         
@@ -28,7 +28,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
                 cards[chosenIndex].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
             }
-            cards[chosenIndex].isFaceUP = true
+            cards[chosenIndex].isFaceUp = true
         }
         else {
             indexOfTheOnlyCardFaceUp = chosenIndex
@@ -54,7 +54,7 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     }
     
     struct Card: Identifiable {
-        var isFaceUP = true
+        var isFaceUp = false
         var isMatched = false
         let content: CardContent
         let id: Int
@@ -72,8 +72,8 @@ extension Array {
     }
 }
 
-struct MemoryGame_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
-    }
-}
+//struct MemoryGame_Previews: PreviewProvider {
+//    static var previews: some View {
+//        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+//    }
+//}
