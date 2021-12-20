@@ -42,6 +42,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DFA09BC42770C84000464C4F /* EmojiArt */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmojiArt;
+			sourceTree = "<group>";
+		};
 		DFD31E122760AD95009A4F1C = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +68,7 @@
 		DFD31E1D2760AD96009A4F1C /* Memorizer */ = {
 			isa = PBXGroup;
 			children = (
+				DFA09BC42770C84000464C4F /* EmojiArt */,
 				DFA09BC0276B457900464C4F /* Pie.swift */,
 				DFD31E2C27623A5F009A4F1C /* MemoryGame.swift */,
 				DFD31E2E27624301009A4F1C /* EmojiMemoryGame.swift */,

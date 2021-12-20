@@ -12,7 +12,15 @@ struct Pie: Shape {
     var endAngle: Angle
     var clockwise: Bool = false
     
-    
+    var animatableData: AnimatablePair<Double, Double> {
+        get {
+            AnimatablePair(startAngle.radians, endAngle.radians)
+        }
+        set {
+            startAngle = Angle.radians(newValue.first)
+            endAngle = Angle.radians(newValue.second)
+        }
+    }
     
     func path(in rect: CGRect) -> Path {
         
@@ -31,7 +39,7 @@ struct Pie: Shape {
             radius: radius,
             startAngle: startAngle,
             endAngle: endAngle,
-            clockwise: clockwise
+            clockwise: !clockwise
         )
         p.addLine(to: center)
         return p
