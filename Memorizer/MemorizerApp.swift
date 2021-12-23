@@ -10,10 +10,12 @@ import SwiftUI
 @main
 struct MemorizerApp: App {
     private let game = EmojiMemoryGame()
+    private let document = EmojiArtDocument()
     
     var body: some Scene {
         WindowGroup {
-            EmojiMemoryGameView(game: game)
+//            EmojiMemoryGameView(game: game)
+            EmojiArtDocumentView(document: document)
         }
     }
 }

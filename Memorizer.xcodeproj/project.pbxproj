@@ -16,6 +16,11 @@
 		DFD31E262760AD97009A4F1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFD31E252760AD97009A4F1C /* Preview Assets.xcassets */; };
 		DFD31E2D27623A5F009A4F1C /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD31E2C27623A5F009A4F1C /* MemoryGame.swift */; };
 		DFD31E2F27624301009A4F1C /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFD31E2E27624301009A4F1C /* EmojiMemoryGame.swift */; };
+		DFEBDAC02772040B005173C9 /* EmojiArtModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDABF2772040B005173C9 /* EmojiArtModel.swift */; };
+		DFEBDAC2277211BE005173C9 /* EmojiArtModel.Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDAC1277211BE005173C9 /* EmojiArtModel.Background.swift */; };
+		DFEBDAC6277344B7005173C9 /* EmojiArtDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDAC5277344B7005173C9 /* EmojiArtDocument.swift */; };
+		DFEBDAC8277349DB005173C9 /* UtilityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDAC7277349DB005173C9 /* UtilityExtension.swift */; };
+		DFEBDACA27734AEA005173C9 /* EmojiArtDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEBDAC927734AEA005173C9 /* EmojiArtDocumentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		DFD31E252760AD97009A4F1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFD31E2C27623A5F009A4F1C /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		DFD31E2E27624301009A4F1C /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
+		DFEBDABF2772040B005173C9 /* EmojiArtModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtModel.swift; sourceTree = "<group>"; };
+		DFEBDAC1277211BE005173C9 /* EmojiArtModel.Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtModel.Background.swift; sourceTree = "<group>"; };
+		DFEBDAC5277344B7005173C9 /* EmojiArtDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocument.swift; sourceTree = "<group>"; };
+		DFEBDAC7277349DB005173C9 /* UtilityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilityExtension.swift; sourceTree = "<group>"; };
+		DFEBDAC927734AEA005173C9 /* EmojiArtDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiArtDocumentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,11 @@
 		DFA09BC42770C84000464C4F /* EmojiArt */ = {
 			isa = PBXGroup;
 			children = (
+				DFEBDABF2772040B005173C9 /* EmojiArtModel.swift */,
+				DFEBDAC1277211BE005173C9 /* EmojiArtModel.Background.swift */,
+				DFEBDAC5277344B7005173C9 /* EmojiArtDocument.swift */,
+				DFEBDAC7277349DB005173C9 /* UtilityExtension.swift */,
+				DFEBDAC927734AEA005173C9 /* EmojiArtDocumentView.swift */,
 			);
 			path = EmojiArt;
 			sourceTree = "<group>";
@@ -161,10 +176,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFA09BC1276B457900464C4F /* Pie.swift in Sources */,
+				DFEBDAC2277211BE005173C9 /* EmojiArtModel.Background.swift in Sources */,
+				DFEBDACA27734AEA005173C9 /* EmojiArtDocumentView.swift in Sources */,
+				DFEBDAC8277349DB005173C9 /* UtilityExtension.swift in Sources */,
 				DFA09BC3276B638900464C4F /* Cardify.swift in Sources */,
+				DFEBDAC02772040B005173C9 /* EmojiArtModel.swift in Sources */,
 				DFD31E2D27623A5F009A4F1C /* MemoryGame.swift in Sources */,
 				DFD31E212760AD96009A4F1C /* EmojiMemoryGameView.swift in Sources */,
 				DFD31E1F2760AD96009A4F1C /* MemorizerApp.swift in Sources */,
+				DFEBDAC6277344B7005173C9 /* EmojiArtDocument.swift in Sources */,
 				DFA09BBF276A32C300464C4F /* AspectVGrid.swift in Sources */,
 				DFD31E2F27624301009A4F1C /* EmojiMemoryGame.swift in Sources */,
 			);
